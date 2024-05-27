@@ -25,10 +25,11 @@ tmp.columns = codebook['PTS Field Name'].tolist() + ['junk']
 del tmp['junk']
 
 # "I consider number of properties, number of units, full market value, and total building square footage, by tax class."
+# I will also need land areas of the tax parcels
 # keep these variables only:
 tmp['YEAR'].value_counts()
 
-fy2024taxrolls = tmp.loc[:,['BORO','BLOCK','LOT','EASE','CURTAXCLASS','CURMKTTOT','UNITS','BLDG_CLASS','GROSS_SQFT','ZIP_CODE','COOP_NUM','CONDO_Number']].copy()
+fy2024taxrolls = tmp.loc[:,['BORO','BLOCK','LOT','EASE','CURTAXCLASS','CURMKTTOT','UNITS','BLDG_CLASS','GROSS_SQFT','ZIP_CODE','COOP_NUM','CONDO_Number','LAND_AREA']].copy()
 
 
 # clean fy09 taxroll assessment data -----------
